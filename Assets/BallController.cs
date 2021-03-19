@@ -19,7 +19,7 @@ public class BallController : MonoBehaviour
 
     void Start() 
     {
-        //シーン中のGameOverTextオブジェクトを取得
+        //シーン中のScoreTextオブジェクトを取得
         this.scoreText = GameObject.Find("ScoreText");
 
     }
@@ -52,15 +52,13 @@ public class BallController : MonoBehaviour
 
     void Update()
     {
-        //ボールが画面外に出た場合の処理
-        if (this.transform.position.z < this.visiblePosZ)
-        {
-            //各得点の合計値を出す
+
+         //各得点の合計値を出す
             int totalscore = scoreA + scoreB + scoreC + scoreD;
 
-            //GameoverTextに合計値を表示
-            this.scoreText.GetComponent<Text>().text = "Your Score is "+ totalscore;
-        }
+            //ScoreTextに合計値を表示
+            this.scoreText.GetComponent<Text>().text = " "+ totalscore;
+       
     }
 
     //衝突時に呼び出される関数
